@@ -224,27 +224,13 @@ GameObject:
   m_Component:
   - component: {fileID: 387816228}
   - component: {fileID: 387816227}
-  - component: {fileID: 387816226}
   m_Layer: 0
   m_Name: Outofbounds
-  m_TagString: Untagged
+  m_TagString: OutofBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &387816226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387816225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25cbfd195df0f7d4085694a0995ef22e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnLaser: {fileID: 1169074674}
 --- !u!65 &387816227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -266,7 +252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387816225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.39, z: -12.47}
+  m_LocalPosition: {x: 0, y: 0.57, z: -12.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -712,8 +698,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.24441528, y: 0.000000008599007, z: -2.6888472e-10, w: 0.96967065}
-  m_LocalPosition: {x: -0.072, y: 5.43, z: -5.12}
+  m_LocalRotation: {x: 0.25598532, y: -0.014498029, z: 0.003843607, w: 0.9665643}
+  m_LocalPosition: {x: 0.3378801, y: 7.912845, z: -9.009999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -965,6 +951,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530dfad9c2b65414aad7fec4df3fbfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinScreen: {fileID: 405178582}
+  playerState: {fileID: 11400000, guid: db6f08547a82f38419010e75ff735650, type: 2}
+  TotalWaves: 5
+  _waveCount: {fileID: 2006141792}
   lasersPrefabs:
   - {fileID: 1358992024587430924, guid: 49c895684c335f34f8c9741fd5dfcf44, type: 3}
   - {fileID: 5420644333167007833, guid: e9ed823ca403fa14d854d796a76dbf74, type: 3}
@@ -1136,7 +1126,7 @@ GameObject:
   - component: {fileID: 1370107446}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370107439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.072, y: 0.044, z: 0}
+  m_LocalPosition: {x: -0.072, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1242,6 +1232,8 @@ MonoBehaviour:
   controller: {fileID: 1370107441}
   playerInput: {fileID: 1370107444}
   animator: {fileID: 1370107445}
+  GameOver: {fileID: 508804178}
+  playerState: {fileID: 11400000, guid: db6f08547a82f38419010e75ff735650, type: 2}
   playerSpeed: 5
 --- !u!1 &1372915565
 GameObject:
@@ -1499,8 +1491,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803693665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4018, y: 0, z: 4.4265}
-  m_LocalScale: {x: 49.554512, y: 0.0661, z: 53.8544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 0.5, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1676,7 +1668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2006141792

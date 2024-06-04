@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217aee71f6bc9074eb3c0f9b244edfbe, type: 3}
+  m_Script: {fileID: 11500000, guid: ac57d7a7c8ac2b341bb19b18ea645f68, type: 3}
   m_Name: PlayerState
   m_EditorClassIdentifier: 
-  activeStates: 1

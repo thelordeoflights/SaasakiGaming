@@ -8,23 +8,38 @@ public class ChacterMovement : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] PlayerInput playerInput;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject GameOver;
+    [SerializeField] PlayerState playerState;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     public float playerSpeed = 2.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
-
     private void Start()
     {
+        GameOver.SetActive(false);
+        playerState.isDead = false;
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Laser" && !playerState.isDead)
+        {
+            GameOver.SetActive(true);
+            playerState.isDead = true;
+            animator.SetTrigger("_Death");
+        }
+    }
+
 
     void Update()
     {
-        Move();
+        if (!playerState.isDead)
+        { Move(); }
     }
 
     private void Move()
     {
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -36,13 +51,15 @@ public class ChacterMovement : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
         if (playerInput.actions["Move"].triggered || playerInput.actions["Move"].IsPressed())
         {
-            animator.SetTrigger("_Run");
-            animator.ResetTrigger("_Idle");
+            animator.SetFloat("_Movement", 1);
+            // animator.SetTrigger("_Run");
+            // animator.ResetTrigger("_Idle");
         }
         else
         {
-            animator.ResetTrigger("_Run");
-            animator.SetTrigger("_Idle");
+            animator.SetFloat("_Movement", 0);
+            // animator.ResetTrigger("_Run");
+            // animator.SetTrigger("_Idle");
         }
 
         if (move != Vector3.zero)

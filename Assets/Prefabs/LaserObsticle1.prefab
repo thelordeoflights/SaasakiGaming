@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 1358992024587430925}
   - component: {fileID: 3022584688854165843}
   - component: {fileID: -8560285105547388382}
+  - component: {fileID: 7005896313097000806}
   m_Layer: 0
   m_Name: LaserObsticle1
   m_TagString: Laser
@@ -338,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc5a957f3b7d5146b40a16209e27fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!54 &-8560285105547388382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -355,6 +356,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7005896313097000806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358992024587430924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cbfd195df0f7d4085694a0995ef22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1358992024781688133
 GameObject:
   m_ObjectHideFlags: 0
