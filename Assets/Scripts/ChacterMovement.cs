@@ -27,6 +27,8 @@ public class ChacterMovement : MonoBehaviour
             GameOver.SetActive(true);
             playerState.isDead = true;
             animator.SetTrigger("_Death");
+            //            controller.radius = 0;
+            //          controller.height = 0.5f;
         }
     }
 
