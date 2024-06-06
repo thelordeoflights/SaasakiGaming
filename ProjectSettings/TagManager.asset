@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Laser
   - OutofBounds
+  - Ground
   layers:
   - Default
   - TransparentFX

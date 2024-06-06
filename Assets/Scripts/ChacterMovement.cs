@@ -11,14 +11,18 @@ public class ChacterMovement : MonoBehaviour
     [SerializeField] GameObject GameOver;
     [SerializeField] PlayerState playerState;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    public bool groundedPlayer;
+
     public float playerSpeed = 2.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
+
     private void Start()
     {
         GameOver.SetActive(false);
         playerState.isDead = false;
+        playerState.canJump = true;
+
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -27,9 +31,9 @@ public class ChacterMovement : MonoBehaviour
             GameOver.SetActive(true);
             playerState.isDead = true;
             animator.SetTrigger("_Death");
-            //            controller.radius = 0;
-            //          controller.height = 0.5f;
         }
+
+
     }
 
 
@@ -37,6 +41,10 @@ public class ChacterMovement : MonoBehaviour
     {
         if (!playerState.isDead)
         { Move(); }
+        if (controller.isGrounded)
+        {
+            playerState.canJump = true;
+        }
     }
 
     private void Move()
@@ -70,24 +78,15 @@ public class ChacterMovement : MonoBehaviour
         }
 
         // Changes the height position of the player..
-        if (playerInput.actions["Jump"].triggered)
+        if (playerState.canJump && playerInput.actions["Jump"].triggered)
         {
-            //animator.ResetTrigger("_Idle");
             animator.SetTrigger("_Jump");
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-            //animator.ResetTrigger("_Jump");
-            // if (controller.isGrounded)
-            // {
-            // }
-            // else
-            // {
-            //     animator.ResetTrigger("_Jump");
-            //     animator.SetTrigger("_Idle");
-            // }
+            playerState.canJump = false;
         }
-
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
 }

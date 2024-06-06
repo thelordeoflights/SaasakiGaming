@@ -48,7 +48,7 @@ public class SpawnLaser : MonoBehaviour
         {
             int laserIndex = Random.Range(0, lasersPrefabs.Length);
             var LaserGO = Instantiate(lasersPrefabs[laserIndex], new Vector3(6.92f, 2f, 10 + i * 5), lasersPrefabs[laserIndex].transform.rotation);
-            LaserGO.GetComponent<MoveTowardPlayer>().speed = laserToSpawn * 2.5f;
+            LaserGO.GetComponent<MoveTowardPlayer>().speed = laserToSpawn * 2f;
         }
 
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerState : ScriptableObject
 {
     public bool isDead = false;
-
+    public bool canJump = true;
 
 
 
