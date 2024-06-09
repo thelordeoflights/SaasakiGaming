@@ -11,6 +11,6 @@ public class CameraMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = _player.transform.position + new Vector3(-0.072f, 5.43f, -5.12f);
+        transform.position = _player.transform.position + new Vector3(0.33f, 7.91f, -9f);
     }
 }
